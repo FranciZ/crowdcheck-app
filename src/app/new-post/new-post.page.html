@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+
+  <div class="top-container">
+    <div class="header-container">
+      <div class="header-button header-close-button" (click)="onBackClick()">
+        <img src="/assets/images/close_icon.svg" width="35px" height="35px">
+      </div>
+    </div>
+
+    <div class="body-container">
+
+      <div class="store-title-container">
+        <div class="store-publish-title">Objavljaš fotografijo za</div>
+      </div>
+
+      <div class="store-image" [style.background-image]="'url('+src+')'">
+        <div class="store-image-text-container">
+          <div class="store-title">Merkator Center Vič</div>
+          <div class="store-address">Jamova cesta 105, Ljubljana</div>
+        </div>
+      </div>
+
+      <div class="store-line-size-title">Kako dolga je vrsta?</div>
+
+      <div class="store-line-size-selection-list">
+
+        <div class="store-line-size-selection-item"
+             [class.store-line-size-selection-item-active]="lineStatusItem.status === lineStatus"
+             (click)="onStatusClick(lineStatusItem)"
+             *ngFor="let lineStatusItem of lineStatusArray;">
+          <div class="store-line-size-selection-item-check"></div>
+          <div class="store-line-size-selection-item-text">{{lineStatusItem.text}}</div>
+          <div class="store-line-size-selection-item-icon">
+            <img [src]="lineStatusItem.iconPath" height="25px">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer-container">
+    <div class="footer-warning-label">S pritiskom na gumb objavi se strinjaš da bo fotografija objavljena na spletu.
+    </div>
+    <div [class.crowdcheck-button-disabled]="!lineStatus" class="crowdcheck-button" (click)="onPublishClick()">Objavi</div>
+  </footer>
+
+</ion-content>

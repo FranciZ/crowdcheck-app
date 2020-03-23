@@ -1,0 +1,116 @@
+@import "../../global";
+
+#container {
+  //text-align: center;
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  //top: 50%;
+  //transform: translateY(-50%);
+}
+
+.map-directions-icon-container {
+  position: fixed;
+  bottom: 320px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  z-index: 15;
+  text-align: center;
+
+  img {
+    margin-top: 15px;
+  }
+}
+
+.map-my-location-icon-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  z-index: 15;
+  text-align: center;
+
+  img {
+    margin-top: 15px;
+  }
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+.location-indicator-title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #666;
+  margin-top: -40px;
+}
+
+.location-indicator-subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  color: #888;
+  margin-top: 15px;
+  line-height: 1.4;
+  padding: 0 30px;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.location-indicator-container {
+  top: 0;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottie-element {
+  display: inline-block;
+}
+
+
+agm-map {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: -moz-available; /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+}
+
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+.map-store-card-container {
+  bottom: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  box-sizing: border-box;
+}

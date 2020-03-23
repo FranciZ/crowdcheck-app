@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+
+  <div class="header-container">
+    <div class="header-button header-close-button" (click)="onBackClick()">
+      <img src="/assets/images/close_icon.svg" width="35px" height="35px">
+    </div>
+    <div class="header-button header-directions-button" (click)="onNavigateClick()">
+      <img src="/assets/images/directions_icon.svg" width="40px" height="40px">
+    </div>
+  </div>
+
+  <div class="store-title-container">
+    <div class="store-title">{{store.name}}</div>
+    <div class="store-address">{{store.street}}, {{store.city}}</div>
+  </div>
+
+  <div class="store-history-container">
+    <app-history-card *ngFor="let historyItem of store.history;" [historyItem]="historyItem"></app-history-card>
+  </div>
+
+  <div class="footer-container">
+    <input class="map-store-camera-button-input" (change)="onPhotoChange($event)" type="file" accept="image/*"
+           capture="camera">
+    <div class="crowdcheck-button">Dodaj fotografijo</div>
+  </div>
+
+</ion-content>

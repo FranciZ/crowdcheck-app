@@ -1,0 +1,77 @@
+@import "../../global";
+
+.header-container {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  overflow: auto;
+  background-color: #ffffff;
+  height: 70px;
+}
+
+.header-button {
+  padding: 15px 20px 20px 20px;
+}
+
+.header-close-button {
+  float: left;
+}
+
+.header-directions-button {
+  float: right;
+}
+
+.store-title-container {
+  margin-top: 70px;
+  padding: 0 20px;
+}
+
+.store-history-container {
+  margin-top: 20px;
+  padding-bottom: 70px;
+}
+
+.crowdcheck-button {
+  border-radius: 8px;
+  background-color: $crowdcheck-blue;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px;
+  text-align: center;
+}
+
+.footer-container {
+  position: fixed;
+  height: 70px;
+  bottom: 0;
+  width: 100%;
+  background-color: #f7f7f7;
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.store-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: $crowdcheck-black;
+  text-align: center;
+}
+
+.store-address {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: $crowdcheck-gray;
+  text-align: center;
+}
+
+.map-store-camera-button-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 45px;
+  z-index: 10;
+}

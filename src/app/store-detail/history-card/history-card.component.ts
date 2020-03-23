@@ -1,0 +1,66 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { IStore, IStoreHistoryItem, StoreBusyStatus } from '../../home/home.page';
+
+@Component({
+  selector: 'app-history-card',
+  templateUrl: './history-card.component.html',
+  styleUrls: ['./history-card.component.scss'],
+})
+export class HistoryCardComponent implements OnInit {
+
+  @Input() historyItem: IStoreHistoryItem;
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  get imageUrl() {
+    if (this.historyItem) {
+      return this.historyItem.photos[0].thumbUrl;
+    }
+    return '/assets/images/image_placeholder.png';
+  }
+
+  get lastDate() {
+    if (!this.historyItem) {
+      return null;
+    }
+    return new Date(this.historyItem.createdAt);
+  }
+
+  get crowdIcon() {
+    if (!this.historyItem) {
+      return null;
+    }
+    const status = this.historyItem.status;
+
+    switch (status) {
+      case StoreBusyStatus.HIGH_BUSY:
+        return '/assets/images/big_crowd_icon.svg';
+        break;
+      case StoreBusyStatus.LOW_BUSY:
+        return '/assets/images/small_crowd_icon.svg';
+        break;
+      case StoreBusyStatus.MEDIUM_BUSY:
+        return '/assets/images/medium_crowd_icon.svg';
+        break;
+    }
+  }
+
+  get crowdString() {
+    switch (this.historyItem.status) {
+      case StoreBusyStatus.HIGH_BUSY:
+        return 'Čakamo več kot pol ure';
+        break;
+      case StoreBusyStatus.LOW_BUSY:
+        return 'Verjetno ni čakanja';
+        break;
+      case StoreBusyStatus.MEDIUM_BUSY:
+        return 'Čakamo okoli 15 minut';
+        break;
+    }
+  }
+
+}

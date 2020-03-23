@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+
+  <div class="header-container">
+    <div class="header-button header-close-button" (click)="onBackClick()">
+      <img src="/assets/images/close_icon.svg" width="35px" height="35px">
+    </div>
+  </div>
+
+  <div class="store-list-page-title-container">
+    <div class="store-list-page-title">Trgovine na tej lokaciji</div>
+  </div>
+
+  <div class="list-container">
+    <app-store-list-item *ngFor="let store of storeMarker.stores" [store]="store" [storeMarker]="storeMarker"></app-store-list-item>
+  </div>
+
+</ion-content>

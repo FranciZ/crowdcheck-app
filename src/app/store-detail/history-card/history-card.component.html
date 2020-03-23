@@ -1,0 +1,12 @@
+<div class="history-card-container">
+  <div class="history-card-time">
+    {{lastDate | amTimeAgo}}
+  </div>
+  <div class="history-card-photo" [style.background-image]="'url('+imageUrl+')'"></div>
+  <div class="history-card-wait-state-container">
+    <div class="history-card-wait-indicator">
+      <img [src]="crowdIcon" height="25"/>
+    </div>
+    <div class="history-card-wait-text">{{crowdString}}</div>
+  </div>
+</div>

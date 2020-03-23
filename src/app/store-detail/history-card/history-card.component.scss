@@ -1,0 +1,42 @@
+.history-card-time {
+  font-family: 'Open Sans', sans-serif;
+  margin: 10px;
+  font-weight: 600;
+}
+
+.history-card-time:first-letter {
+  text-transform: capitalize;
+}
+
+.history-card-photo {
+  height: 200px;
+  width: 100%;
+  background-color: #eee;
+  background-size: cover;
+  background-position: center;
+}
+
+.history-card-wait-text {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.history-card-container {
+  border-bottom: 2px solid #eee;
+}
+
+.history-card-wait-state-container {
+  margin: 10px;
+  overflow: auto;
+}
+
+.history-card-wait-indicator {
+  float: left;
+  margin-top: 3px;
+}
+
+.history-card-wait-text {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 6px;
+}

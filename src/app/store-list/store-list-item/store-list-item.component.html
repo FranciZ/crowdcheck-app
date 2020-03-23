@@ -1,0 +1,41 @@
+<div class="map-store-card-container" *ngIf="store">
+  <div class="map-store-card">
+
+    <!-- CARD HEADER -->
+    <div class="map-store-card-header"
+         (click)="onCardClick()"
+         *ngIf="store.history && store.history.length">
+      <div class="map-store-card-header-left">
+        <div class="last-photo-title">Zadnja fotografija</div>
+        <div class="last-photo-time-string">{{lastDate | amTimeAgo}}</div>
+      </div>
+      <div class="map-store-card-header-right">
+        <div class="map-store-header-line-indicator">
+          <img [src]="crowdIcon" height="25"/>
+        </div>
+      </div>
+    </div>
+    <!-- END CARD HEADER -->
+
+    <div [class.map-store-card-image-no-history]="!store.history  || !store.history.length"
+         [style.background-image]="'url('+imageUrl+')'"
+         class="map-store-card-image" (click)="onCardClick()">
+      <div *ngIf="!store.history  || !store.history.length">
+        <div class="card-image-empty-title">Brez fotografije več kot 2 uri</div>
+        <div class="card-image-empty-subtitle">Pomagaj drugim in dodaj fotografijo</div>
+      </div>
+    </div>
+
+    <div class="map-store-card-store-info-container" (click)="onCardClick()">
+      <div class="map-store-card-store-name">{{store.name}}</div>
+      <div class="map-store-card-store-address">{{store.street}}, {{store.city}}</div>
+    </div>
+
+    <div class="map-store-card-button-container">
+      <input class="map-store-camera-button-input" (change)="onPhotoChange($event)" type="file" accept="image/*"
+             capture="camera">
+      <div class="map-store-card-button">Dodaj fotografijo</div>
+    </div>
+
+  </div>
+</div>

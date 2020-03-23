@@ -1,0 +1,133 @@
+@import "../../../global";
+
+
+.map-store-card-container {
+  width: 100%;
+  z-index: 10;
+  box-sizing: border-box;
+  margin: 0 0 5px 0;
+  border-bottom: 2px solid #eee;
+}
+
+.map-store-card {
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.map-store-card-button-container {
+  box-sizing: border-box;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.map-store-camera-button-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 45px;
+  z-index: 10;
+}
+
+.map-store-card-button {
+  border-radius: 10px;
+  background-color: $crowdcheck-blue;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 11px;
+  text-align: center;
+}
+
+.map-store-card-image {
+  background-color: #eeeeee;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-image-empty-title{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color:$crowdcheck-black;
+}
+
+.card-image-empty-subtitle{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color:$crowdcheck-blue;
+}
+
+.map-store-card-image-no-history {
+  height: 184px;
+}
+
+.map-store-card-store-info-container {
+  padding: 10px;
+}
+
+.map-store-card-store-name {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: $crowdcheck-black;
+}
+
+.map-store-card-store-address {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: $crowdcheck-gray;
+}
+
+.map-store-card-header {
+  padding: 10px;
+  overflow: hidden;
+  height:64px;
+}
+
+.map-store-card-header-left {
+  float: left;
+}
+
+.map-store-card-header-right {
+  float: right;
+}
+
+.map-store-header-line-indicator {
+  margin: 5px;
+}
+
+.map-store-card-no-info-label {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  padding: 9px 0 10px 0;
+  font-weight: 700;
+  color: $crowdcheck-black;
+}
+
+.last-photo-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: $crowdcheck-gray;
+}
+
+.last-photo-time-string {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: $crowdcheck-black;
+}
+
+.last-photo-time-string:first-letter {
+  text-transform: capitalize
+}

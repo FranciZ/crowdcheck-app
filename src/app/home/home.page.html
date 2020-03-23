@@ -1,0 +1,73 @@
+<!--<ion-header [translucent]="true">-->
+<!--  <ion-toolbar>-->
+<!--    <ion-title>-->
+<!--      Blank-->
+<!--    </ion-title>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
+
+<ion-content [fullscreen]="false">
+  <!--  <ion-header collapse="condense">-->
+  <!--    <ion-toolbar>-->
+  <!--      <ion-title size="large">Blank</ion-title>-->
+  <!--    </ion-toolbar>-->
+  <!--  </ion-header>-->
+
+  <div id="container">
+
+    <div class="map-container" *ngIf="!locationLoading">
+
+      <div class="map-my-location-icon-container" (click)="onMyLocationClick()">
+        <img src="/assets/images/crosshair_icon.svg" width="30px" height="30px">
+      </div>
+
+      <div class="map-directions-icon-container" *ngIf="selectedMarker && selectedMarker.type === 'SINGLE'"
+           (click)="onNavigateClick()">
+        <img src="/assets/images/directions_icon.svg" width="30px" height="30px">
+      </div>
+      <app-card [storeMarker]="selectedMarker" *ngIf="selectedMarker && selectedMarker.type === 'SINGLE'"></app-card>
+      <agm-map (boundsChange)="onBoundsChange($event)"
+               [styles]="locationService.mapStyle"
+               [zoom]="zoomLevel"
+               [zoomControl]="false"
+               (mapClick)="onMapClick()"
+               (mapReady)="onMapReady($event)"
+               [latitude]="mapLocation.lat"
+               [longitude]="mapLocation.lng">
+
+        <agm-marker-cluster imagePath="/assets/images/map_pin_cluster"
+                            imageExtension="svg"
+                            [averageCenter]="true"
+                            (clusterClick)="onClusterClick($event)"
+                            [calculator]="clusterCalculator">
+          <agm-marker *ngFor="let marker of markers;"
+                      [latitude]="marker.lat"
+                      [longitude]="marker.lng"
+                      [markerClickable]="true"
+                      (markerClick)="onMarkerClick(marker)"
+                      [iconUrl]="marker.icon">
+          </agm-marker>
+        </agm-marker-cluster>
+
+        <agm-marker *ngIf="locationService.location"
+                    [latitude]="locationService.location.lat"
+                    [longitude]="locationService.location.lng"
+                    iconUrl="/assets/images/my_location_pin.svg">
+        </agm-marker>
+
+      </agm-map>
+    </div>
+
+    <div class="location-indicator-container" *ngIf="locationLoading">
+      <div>
+        <ng-lottie class="lottie-element" width="200px" height="200px" [options]="lottieOptions"
+                   (animationCreated)="animationCreated($event)"></ng-lottie>
+        <div class="location-indicator-title">Pridobivam lokacijo</div>
+        <div class="location-indicator-subtitle">Aplikacija potrebuje vašo lokacijo, da vam lahko prikaže bližnje
+          trgovine.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

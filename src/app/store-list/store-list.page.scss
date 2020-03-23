@@ -1,0 +1,39 @@
+@import "../../global";
+
+.header-container {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  overflow: auto;
+  background-color: #ffffff;
+  height: 70px;
+}
+
+.header-button {
+  padding: 15px 20px 20px 20px;
+}
+
+.header-close-button {
+  float: left;
+}
+
+.header-directions-button {
+  float: right;
+}
+
+.store-list-page-title-container {
+  margin-top: 70px;
+  padding: 0 20px;
+}
+
+.list-container {
+  margin-top: 20px;
+}
+
+.store-list-page-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: $crowdcheck-black;
+  text-align: center;
+}
