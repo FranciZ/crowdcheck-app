@@ -191,6 +191,8 @@ export class HomePage implements OnInit {
 
   onMyLocationClick() {
 
+    this.deselectSelectedMarker();
+
     this.locationLoading = true;
 
     const options = {
