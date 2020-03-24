@@ -98,6 +98,9 @@
   font-size: 16px;
   font-weight: 700;
   color: $crowdcheck-black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .map-store-card-store-address {
