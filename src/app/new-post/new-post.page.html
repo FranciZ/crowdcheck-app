@@ -15,8 +15,8 @@
 
       <div class="store-image" [style.background-image]="'url('+src+')'">
         <div class="store-image-text-container">
-          <div class="store-title">Merkator Center Vič</div>
-          <div class="store-address">Jamova cesta 105, Ljubljana</div>
+          <div class="store-title">{{store.name}}</div>
+          <div class="store-address">{{store.street}}, {{store.city}}</div>
         </div>
       </div>
 
@@ -43,7 +43,8 @@
   <footer class="footer-container">
     <div class="footer-warning-label">S pritiskom na gumb objavi se strinjaš da bo fotografija objavljena na spletu.
     </div>
-    <div [class.crowdcheck-button-disabled]="!lineStatus" class="crowdcheck-button" (click)="onPublishClick()">Objavi</div>
+    <div [class.crowdcheck-button-disabled]="!lineStatus" class="crowdcheck-button" (click)="onPublishClick()">Objavi
+    </div>
   </footer>
 
 </ion-content>

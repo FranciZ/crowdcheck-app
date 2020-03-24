@@ -11,13 +11,12 @@
          (click)="onCardClick()"
          *ngIf="storeMarker.store.history && storeMarker.store.history.length">
       <div class="map-store-card-header-left">
-        <div class="last-photo-title">Zadnja fotografija</div>
+        <div class="last-photo-title">Zadnji podatek</div>
         <div class="last-photo-time-string">{{lastDate | amTimeAgo}}</div>
       </div>
       <div class="map-store-card-header-right">
-        <div class="map-store-header-line-indicator">
-          <img [src]="crowdIcon" height="25"/>
-        </div>
+        <div class="last-photo-title">Vrsta pred trgovino</div>
+        <img [src]="crowdIcon" height="20"/>
       </div>
     </div>
     <!-- END CARD HEADER -->

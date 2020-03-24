@@ -7,6 +7,7 @@ import { ApiService, ISimpleLocation } from '../services/api.service';
 import { ClusterStyle } from '@agm/js-marker-clusterer/services/google-clusterer-types';
 import { AgmMap } from '@agm/core';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 declare var google;
 
@@ -58,8 +59,8 @@ export class HomePage implements OnInit {
 
     const options = {
       enableHighAccuracy: true,
-      timeout: 5000,
-      maximumWait: 10000,
+      timeout: environment.production ? 5000 : 1000,
+      maximumWait: environment.production ? 10000 : 1000,
       desiredAccuracy: 30,
       fallbackToIP: true,
       addressLookup: false,
@@ -135,9 +136,15 @@ export class HomePage implements OnInit {
   async onMarkerClick(marker: IStoreMarker) {
 
     if (marker === this.selectedMarker) {
-      this.selectedMarker = null;
-      return new Promise(resolve => setTimeout(resolve, 1));
+
     }
+
+    if (this.selectedMarker) {
+      this.deselectSelectedMarker();
+    }
+
+    this.selectedMarker = null;
+    await new Promise(resolve => setTimeout(resolve, 0));
 
     if (marker.type === MarkerType.MULTIPLE) {
       this.router.navigate(['store-list'], {
@@ -148,8 +155,6 @@ export class HomePage implements OnInit {
     }
 
     console.log('Marker click');
-
-    this.deselectSelectedMarker();
 
     marker.icon = {
       url: marker.type === MarkerType.SINGLE ? '/assets/images/map_pin_selected.svg' : '/assets/images/map_pin_cluster_selected.svg',
