@@ -2,7 +2,7 @@
   <div class="history-card-time">
     {{lastDate | amTimeAgo}}
   </div>
-  <div class="history-card-photo" [style.background-image]="'url('+imageUrl+')'"></div>
+  <div class="history-card-photo" (click)="onImageClick()" [style.background-image]="'url('+imageUrl+')'"></div>
   <div class="history-card-wait-state-container">
     <div class="history-card-wait-indicator">
       <img [src]="crowdIcon" height="25"/>

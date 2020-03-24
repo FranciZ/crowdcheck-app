@@ -9,6 +9,7 @@ import { StoreDetailPageRoutingModule } from './store-detail-routing.module';
 import { StoreDetailPage } from './store-detail.page';
 import { HistoryCardComponent } from './history-card/history-card.component';
 import { MomentModule } from 'ngx-moment';
+import { ImageModalPageModule } from '../modals/image-modal/image-modal.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { MomentModule } from 'ngx-moment';
     FormsModule,
     IonicModule,
     StoreDetailPageRoutingModule,
-    MomentModule
+    MomentModule,
+    ImageModalPageModule
   ],
   declarations: [StoreDetailPage, HistoryCardComponent]
 })

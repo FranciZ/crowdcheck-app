@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'store-list',
     loadChildren: () => import('./store-list/store-list.module').then( m => m.StoreListPageModule)
   },
+  {
+    path: 'image-modal',
+    loadChildren: () => import('./modals/image-modal/image-modal.module').then( m => m.ImageModalPageModule)
+  },
 ];
 
 @NgModule({

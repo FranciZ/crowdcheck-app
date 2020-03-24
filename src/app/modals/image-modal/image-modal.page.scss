@@ -1,0 +1,25 @@
+.header-button {
+  position: fixed;
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+  border-radius: 6px;
+  z-index: 2;
+  background-color: rgba(255, 255, 255);
+}
+
+.header-close-button {
+  float: left;
+}
+
+.image-modal-image-container {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: -moz-available; /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

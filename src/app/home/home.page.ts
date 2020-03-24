@@ -132,10 +132,11 @@ export class HomePage implements OnInit {
     }
   }
 
-  onMarkerClick(marker: IStoreMarker) {
+  async onMarkerClick(marker: IStoreMarker) {
 
     if (marker === this.selectedMarker) {
-      // return;
+      this.selectedMarker = null;
+      return new Promise(resolve => setTimeout(resolve, 1));
     }
 
     if (marker.type === MarkerType.MULTIPLE) {

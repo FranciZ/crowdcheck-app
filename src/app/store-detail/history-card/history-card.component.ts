@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IStore, IStoreHistoryItem, StoreBusyStatus } from '../../home/home.page';
+import { ModalController } from '@ionic/angular';
+import { ImageModalPage } from '../../modals/image-modal/image-modal.page';
 
 @Component({
   selector: 'app-history-card',
@@ -10,10 +12,20 @@ export class HistoryCardComponent implements OnInit {
 
   @Input() historyItem: IStoreHistoryItem;
 
-  constructor() {
+  constructor(public modalController: ModalController) {
   }
 
   ngOnInit() {
+  }
+
+  async onImageClick() {
+    const modal = await this.modalController.create({
+      component: ImageModalPage,
+      componentProps: {
+        url: this.imageUrl
+      }
+    });
+    return await modal.present();
   }
 
   get imageUrl() {

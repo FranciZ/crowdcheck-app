@@ -76,7 +76,8 @@ export class NewPostPage implements OnInit {
         const file = await imageCompression(this.file, {
           maxSizeMB: 1,
           maxWidthOrHeight: 1440,
-          exifOrientation: orientation
+          exifOrientation: orientation,
+          maxIteration: 4
         });
 
         this.fileForUpload = file;
@@ -151,10 +152,14 @@ export class NewPostPage implements OnInit {
       };
 
       this.photoUploader.onCompleteItem = async (item: any, response: any, status: any, headers: any) => {
-        console.log('Image uploaded');
+        console.log('Image uploaded: ', response);
         const photo: IFile = JSON.parse(response).data;
         this.photoProgress = 0;
         resolve(photo);
+      };
+
+      this.photoUploader.onAfterAddingFile = (file) => {
+        file.withCredentials = false;
       };
 
       this.photoUploader.onErrorItem = async (item: any, response: any, status: any, headers: any) => {
