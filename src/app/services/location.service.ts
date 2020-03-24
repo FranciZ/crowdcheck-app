@@ -7,20 +7,14 @@ export class LocationService {
 
   mapStyle = [
     {
-      "featureType": "poi",
-      "elementType": "all",
+      "featureType": "landscape.natural",
+      "elementType": "geometry.fill",
       "stylers": [
         {
-          "hue": "#000000"
+          "visibility": "on"
         },
         {
-          "saturation": -100
-        },
-        {
-          "lightness": -100
-        },
-        {
-          "visibility": "off"
+          "color": "#e0efef"
         }
       ]
     },
@@ -29,34 +23,43 @@ export class LocationService {
       "elementType": "all",
       "stylers": [
         {
-          "hue": "#000000"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": -100
-        },
-        {
           "visibility": "off"
         }
       ]
     },
     {
-      "featureType": "administrative",
+      "featureType": "poi",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "visibility": "on"
+        },
+        {
+          "hue": "#1900ff"
+        },
+        {
+          "color": "#c0e8e8"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
       "elementType": "all",
       "stylers": [
         {
-          "hue": "#000000"
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "lightness": 100
         },
         {
-          "saturation": 0
-        },
-        {
-          "lightness": -100
-        },
-        {
-          "visibility": "off"
+          "visibility": "simplified"
         }
       ]
     },
@@ -65,34 +68,25 @@ export class LocationService {
       "elementType": "labels",
       "stylers": [
         {
-          "hue": "#ffffff"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": 100
-        },
-        {
           "visibility": "off"
         }
       ]
     },
     {
-      "featureType": "water",
-      "elementType": "labels",
+      "featureType": "road.highway",
+      "elementType": "all",
       "stylers": [
         {
-          "hue": "#000000"
-        },
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "road.arterial",
+      "elementType": "all",
+      "stylers": [
         {
-          "saturation": -100
-        },
-        {
-          "lightness": -100
-        },
-        {
-          "visibility": "off"
+          "visibility": "on"
         }
       ]
     },
@@ -101,106 +95,28 @@ export class LocationService {
       "elementType": "all",
       "stylers": [
         {
-          "hue": "#ffffff"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": 100
-        },
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.line",
+      "elementType": "geometry",
+      "stylers": [
         {
           "visibility": "on"
+        },
+        {
+          "lightness": 700
         }
       ]
     },
     {
       "featureType": "water",
-      "elementType": "geometry",
+      "elementType": "all",
       "stylers": [
         {
-          "hue": "#ffffff"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": 100
-        },
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "transit",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "hue": "#000000"
-        },
-        {
-          "saturation": 0
-        },
-        {
-          "lightness": -100
-        },
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "landscape",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "hue": "#000000"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": -100
-        },
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "hue": "#bbbbbb"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": 26
-        },
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "landscape",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "hue": "#dddddd"
-        },
-        {
-          "saturation": -100
-        },
-        {
-          "lightness": -3
-        },
-        {
-          "visibility": "on"
+          "color": "#7dcdcd"
         }
       ]
     }

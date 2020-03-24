@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API: {
-    BASE_URL: 'https://api.guzva.djnd.si'
+    BASE_URL: 'http://10.0.0.11:3088'
   }
 };
 

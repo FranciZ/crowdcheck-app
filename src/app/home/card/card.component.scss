@@ -115,6 +115,7 @@
 }
 
 .map-store-card-header {
+  position: relative;
   padding: 10px;
   overflow: hidden;
   height: 64px;
@@ -125,7 +126,9 @@
 }
 
 .map-store-card-header-right {
-  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
   text-align: right;
 }
 
