@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { ModalController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-image-modal',
@@ -10,16 +11,19 @@ export class ImageModalPage implements OnInit {
 
   @Input() url: string;
 
-  constructor(private modalCtrl: ModalController) {
+  constructor(private modalCtrl: ModalController,
+              private router: Router,
+              private navCtrl: NavController) {
   }
 
   ngOnInit() {
+    if (this.router.getCurrentNavigation().extras.state) {
+      this.url = this.router.getCurrentNavigation().extras.state.url;
+    }
   }
 
   onBackClick() {
-    this.modalCtrl.dismiss({
-      dismissed: true
-    });
+    this.navCtrl.back();
   }
 
 }
